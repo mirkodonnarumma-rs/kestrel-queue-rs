@@ -1,2 +1,2 @@
-# job-scheduler-rs
-Job scheduler + worker che riceve job via HTTP, li accoda su Redis, li esegue in background, mantiene lo stato dei job e fornisce un dashboard realtime via WebSocket per monitorare lo stato.
+# kestrel-queue-rs
+API REST per enqueue job (persistenza in Postgres), worker che consuma job (con retries/backoff), persistenza stato job in Postgres, e dashboard minima con metriche Prometheus; CI su GitHub Actions (no Docker).
