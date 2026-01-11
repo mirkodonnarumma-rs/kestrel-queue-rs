@@ -2,6 +2,29 @@
 name = "kestrel-queue-rs"
 version = "0.1.0"
 edition = "2024"
+resolver = "3"
+authors = ["Mirko Donnarumma <mirko.donnarumma@outlook.it>"]
+description = "A high-performance queue system"
+license = "MIT"
+repository = "https://github.com/yourusername/kestrel-queue-rs"
+keywords = ["queue", "async", "distributed"]
+categories = ["asynchronous", "concurrency"]
+readme = "README.md"
+
+[[bin]]
+name = "kestrel"
+path = "src/main.rs"
 
 [dependencies]
-toml = "0.9.8"
+tracing = { version = "0.1.44", default-features = false }
+tracing-appender = "0.2.4"
+tracing-subscriber = { version = "0.3.22", features = ["std", "env-filter", "chrono", "fmt"]}
+
+[dev-dependencies]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+incremental = false
